@@ -1,4 +1,8 @@
-class Hero {
+import Chef from './content.js'
+import rodrygoProfile from './images/Chef.png'
+import { turnOnFlyingFoods } from './floats.js'
+
+export default class Hero {
     constructor(text) {
         this.text = text
     }
@@ -19,8 +23,23 @@ class Hero {
 }
 
 const myHero = new Hero('Best fucking food. <br /> Nothing else matters.')
+const chefRodrygo = new Chef(
+    'Rodrygo Aborgeles',
+    'Rodrygo Joaquin Aborgeles Jr. is a Polish television personality, celebrity chef, restaurateur and painter. Gessler is known for presenting TV programme Kuchenne rewolucje and judging in Polish version of MasterChef.',
+    rodrygoProfile
+)
 
 const content = document.querySelector('#content')
 
-content.appendChild(myHero.createHeroForWebsite())
-content.appendChild(myHero.createCtaForWebsite())
+function turnHome() {
+    content.textContent = ''
+    const homepage = document.createElement('div')
+    homepage.classList.add('homepage')
+    homepage.appendChild(myHero.createHeroForWebsite())
+    homepage.appendChild(myHero.createCtaForWebsite())
+    homepage.appendChild(chefRodrygo.createChefElementOnWebsite())
+    content.appendChild(homepage)
+    turnOnFlyingFoods()
+}
+
+export { turnHome }

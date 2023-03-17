@@ -1,25 +1,53 @@
-import logoImg from './images/Eggplant.png'
+export default class Food {
+    constructor(image, name, desc, price) {
+        this.image = image
+        this.name = name
+        this.desc = desc
+        this.price = price
+    }
 
-const headerLogo = document.querySelector('.logo')
+    createMenuFoodItem() {
+        const menuItem = document.createElement('div')
+        menuItem.classList.add('menuItem')
 
-const logo = document.createElement('img')
-logo.setAttribute('src', logoImg)
-logo.classList.add('logo-img')
-headerLogo.appendChild(logo)
+        const menuItemImg = document.createElement('div')
+        menuItemImg.classList.add('menuItem-img')
 
-const name = document.createElement('div')
-name.textContent = 'Foodey'
-name.classList.add('logo-name')
-headerLogo.appendChild(name)
+        const menuItemImgTag = document.createElement('img')
+        menuItemImgTag.setAttribute('src', this.image)
+        menuItemImgTag.classList.add('food-img')
 
-const buttons = document.querySelector('.buttons')
+        menuItemImg.appendChild(menuItemImgTag)
 
-const menuElements = [`Home`, `Menu`, `Contact`]
+        const menuItemDesc = document.createElement('div')
+        menuItemDesc.classList.add('menuItem-desc')
 
-menuElements.forEach((element) => {
-    const menuItem = document.createElement('div')
-    menuItem.classList.add('menu-button')
-    menuItem.textContent = element
-    console.log(menuItem)
-    buttons.appendChild(menuItem)
-})
+        const menuItemName = document.createElement('h3')
+        menuItemName.classList.add('menuItem-name')
+        menuItemName.textContent = this.name
+
+        const menuItemDescP = document.createElement('p')
+        menuItemDescP.classList.add('menuItem-descP')
+        menuItemDescP.textContent = this.desc
+
+        menuItemDesc.appendChild(menuItemName)
+        menuItemDesc.appendChild(menuItemDescP)
+
+        const menuItemPrice = document.createElement('div')
+        menuItemPrice.classList.add('menuItem-price')
+        menuItemPrice.textContent = this.price
+
+        menuItem.appendChild(menuItemImg)
+        menuItem.appendChild(menuItemDesc)
+        menuItem.appendChild(menuItemPrice)
+        return menuItem
+    }
+}
+
+function createMenu() {
+    const menu = document.createElement('div')
+    menu.classList.add('menu')
+    return menu
+}
+
+export { createMenu }

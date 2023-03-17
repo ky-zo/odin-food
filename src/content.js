@@ -1,6 +1,6 @@
 import rodrygoProfile from './images/Chef.png'
 
-class Chef {
+export default class Chef {
     constructor(name, bio, image) {
         this.name = name
         this.bio = bio
@@ -31,13 +31,3 @@ class Chef {
         return chef
     }
 }
-
-const chefRodrygo = new Chef(
-    'Rodrygo Aborgeles',
-    'Rodrygo Joaquin Aborgeles Jr. is a Polish television personality, celebrity chef, restaurateur and painter. Gessler is known for presenting TV programme Kuchenne rewolucje and judging in Polish version of MasterChef.',
-    rodrygoProfile
-)
-
-const content = document.querySelector('#content')
-
-content.appendChild(chefRodrygo.createChefElementOnWebsite())

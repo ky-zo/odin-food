@@ -39,7 +39,7 @@
     color: blueviolet;
 }
 
-#content {
+.homepage {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,4 +116,36 @@ h1 {
     flex-direction: column;
     gap: 20px;
     justify-content: space-around;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    min-width: 100dvw;
+    min-height: 100dvh;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.menuItem {
+    display: grid;
+    width: 60vw;
+    height: 150px;
+    grid-template-columns: 30% 1fr 20%;
+    gap: 30px;
+}
+
+.food-img {
+    max-width: 60%;
+    align-self: center;
+}
+
+.menuItem-img,
+.menuItem-desc,
+.menuItem-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }

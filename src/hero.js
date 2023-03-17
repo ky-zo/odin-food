@@ -1,6 +1,7 @@
 import Chef from './content.js'
 import rodrygoProfile from './images/Chef.png'
 import { turnOnFlyingFoods } from './floats.js'
+import { turnMenu } from './menu.js'
 
 export default class Hero {
     constructor(text) {
@@ -17,6 +18,9 @@ export default class Hero {
     createCtaForWebsite() {
         const cta = document.createElement('button')
         cta.classList.add('cta-primary')
+        cta.addEventListener('click', () => {
+            turnMenu()
+        })
         cta.innerText = 'Order the goodies'
         return cta
     }

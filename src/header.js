@@ -1,4 +1,7 @@
 import logoImg from './images/Eggplant.png'
+import { turnMenu } from './menu.js'
+import { turnHome } from './hero'
+import turnContact from './contact.js'
 
 const headerLogo = document.querySelector('.logo')
 
@@ -20,6 +23,14 @@ menuElements.forEach((element) => {
     const menuItem = document.createElement('div')
     menuItem.classList.add('menu-button')
     menuItem.textContent = element
-    console.log(menuItem)
+    menuItem.addEventListener('click', (e) => {
+        if (element === 'Home') {
+            turnHome()
+        } else if (element === 'Menu') {
+            turnMenu()
+        } else {
+            turnContact()
+        }
+    })
     buttons.appendChild(menuItem)
 })

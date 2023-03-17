@@ -17,6 +17,8 @@ content.appendChild(createMenu())
 
 const menu = document.querySelector('.menu')
 
+menu.appendChild(eggplant.createMenuFoodItem())
+
 foodList.forEach((element) => {
     const food = new Food(`/images/${element[0]}`, element[1], element[2], element[3])
     menu.appendChild(food.createMenuFoodItem())
